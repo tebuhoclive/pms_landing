@@ -16,7 +16,7 @@ import Function4 from "./components/Function4";
 import BackgroundPictureComponent from "./components/BackgroundPictureComponent";
 
 import "uikit/dist/css/uikit.min.css";
-import VericalLine from "./components/VerticalLine";
+
 
 const App: React.FC = () => {
   return (

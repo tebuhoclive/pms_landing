@@ -1,13 +1,12 @@
-import React from "react";
 
 
 const BackgroundPictureComponent = () => {
   const sectionStyle = {
-    backgroundImage: `url(./public/young-man.png)`, // Use the provided image path
+    backgroundImage: `url(./public/young-man.png)`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    minHeight: "60vh", // Set a minimum height to cover the entire viewport
+    minHeight: "60vh",
 
     display: "flex",
     justifyContent: "center",
@@ -15,9 +14,8 @@ const BackgroundPictureComponent = () => {
   };
 
   return (
-    <section style={sectionStyle}>
-      
-     
+    <section className="uk-section uk-flex uk-flex-middle" style={sectionStyle}>
+      {/* ... */}
     </section>
   );
 };

@@ -1,11 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+const SignupLinkStyles = {
+  marginTop:"10px",
+  marginRight:"10px",
+  width: "190px",
+  height: "48px",
+  flexShrink: 0,
+  borderRadius: "15px",
+  border: "4px solid #EB1717",
+  background: "rgba(255, 255, 255, 0.00)",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  textDecoration: "none",
+  color: "#EB1717",
+  fontWeight: "bold",
+  fontSize: "16px",
+};
+
 const Nav: React.FC = () => {
   return (
-    <nav className="uk-navbar-container uk-navbar-transparent uk-padding uk-flex uk-flex-center">
+    <nav className="uk-navbar-container uk-navbar-transparent uk-padding uk-flex uk-flex-center" uk-navbar="">
       <div
-        className="uk-navbar"
+        className="uk-navbar uk-width-1-1"
         style={{
           maxWidth: "1200px",
           width: "100%",
@@ -16,9 +35,9 @@ const Nav: React.FC = () => {
           alignItems: "center",
         }}
       >
-        {/* Main Menu */}
+        {/* Logo and Mobile Menu Toggle */}
         <ul
-          className="uk-navbar-nav uk-flex uk-flex-row uk-text-center uk-margin-remove-bottom" // Remove bottom margin for mobile
+          className="uk-navbar-nav uk-flex uk-flex-row uk-text-center uk-margin-remove-bottom uk-width-1-1"
           style={{
             padding: "0 20px",
             paddingRight: "1px",
@@ -31,54 +50,60 @@ const Nav: React.FC = () => {
             alignItems: "center",
           }}
         >
+          <li className="uk-margin-right uk-hidden@m">
+            <label htmlFor="mobile-toggle">
+              <span className="uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""></span>
+            </label>
+            <input id="mobile-toggle" type="checkbox" className="uk-hidden" />
+
+            {/* Mobile Menu */}
+            <div className="uk-navbar-dropdown uk-width-1-1">
+              <ul className="uk-nav uk-navbar-dropdown-nav">
+                <li>
+                  <Link to="/">About</Link>
+                </li>
+                <li>
+                  <Link to="/testimonies">Functions</Link>
+                </li>
+                <li>
+                  <Link to="/testimonies">Contact Us</Link>
+                </li>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/signup"  style={SignupLinkStyles}>Signup</Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          {/* Logo */}
           <li className="uk-margin-right">
             <Link to="/" className="uk-logo">
               <img src="./lotswhite.png" alt="Logo" width="80" height="40" />
             </Link>
           </li>
-          <li className="uk-margin-right">
-            <Link to="/">About</Link>
-          </li>
-          <li className="uk-margin-right">
-            <Link to="/testimonies">Functions</Link>
-          </li>
-          <li className="uk-margin-right">
-            <Link to="/testimonies">Contact Us</Link>
-          </li>
         </ul>
 
-        {/* Mobile Menu Toggle */}
-        <label htmlFor="mobile-toggle" className="uk-margin-remove-bottom">
-          <span
-            className="uk-icon uk-navbar-toggle-icon"
-            uk-navbar-toggle-icon=""
-          ></span>
-        </label>
-        <input id="mobile-toggle" type="checkbox" className="uk-hidden" />
-
-        {/* Mobile Menu */}
-        <div
-          className="uk-navbar-dropdown"
-          style={{ backgroundColor: "white", borderRadius: "30px" }}
-        >
-          <ul className="uk-nav uk-navbar-dropdown-nav">
-            <li>
-              <Link to="/">About</Link>
-            </li>
-            <li>
-              <Link to="/testimonies">Functions</Link>
-            </li>
-            <li>
-              <Link to="/testimonies">Contact Us</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/signup">Signup</Link>
-            </li>
-          </ul>
-        </div>
+        {/* Desktop Navigation */}
+        <ul className="uk-navbar-nav uk-visible@m ">
+          <li className="uk-margin-left">
+            <Link to="/">About</Link>
+          </li>
+          <li className="uk-margin-left">
+            <Link to="/testimonies">Functions</Link>
+          </li>
+          <li className="uk-margin-left">
+            <Link to="/testimonies">Contact Us</Link>
+          </li>
+          <li className="uk-margin-right" >
+            <Link to="/login">Login</Link>
+          </li>
+          <Link to="/signup" style={SignupLinkStyles}>
+            Signup Now
+          </Link>
+        </ul>
       </div>
     </nav>
   );
