@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const SignupLinkStyles = {
-  marginTop:"10px",
-  marginRight:"10px",
+  marginTop: "10px",
+  marginRight: "10px",
   width: "190px",
   height: "48px",
   flexShrink: 0,
@@ -19,10 +18,29 @@ const SignupLinkStyles = {
   fontWeight: "bold",
   fontSize: "16px",
 };
+const NavLinkStyles = {
+  color: "#000",
+  fontFamily: "Lato",
+  fontSize: "21px",
+  fontStyle: "normal",
+  fontWeight: 700,
+  lineHeight: "150%" /* 31.5px */,
+  letterSpacing: "-0.462px",
+  width: "104px",
+  height: "25px",
+  flexShrink: 0,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  textDecoration: "none",
+};
 
 const Nav: React.FC = () => {
   return (
-    <nav className="uk-navbar-container uk-navbar-transparent uk-padding uk-flex uk-flex-center" uk-navbar="">
+    <nav
+      className="uk-navbar-container uk-navbar-transparent uk-padding uk-flex uk-flex-center"
+      uk-navbar=""
+    >
       <div
         className="uk-navbar uk-width-1-1"
         style={{
@@ -52,7 +70,10 @@ const Nav: React.FC = () => {
         >
           <li className="uk-margin-right uk-hidden@m">
             <label htmlFor="mobile-toggle">
-              <span className="uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""></span>
+              <span
+                className="uk-icon uk-navbar-toggle-icon"
+                uk-navbar-toggle-icon=""
+              ></span>
             </label>
             <input id="mobile-toggle" type="checkbox" className="uk-hidden" />
 
@@ -60,19 +81,29 @@ const Nav: React.FC = () => {
             <div className="uk-navbar-dropdown uk-width-1-1">
               <ul className="uk-nav uk-navbar-dropdown-nav">
                 <li>
-                  <Link to="/">About</Link>
+                  <Link to="/" style={NavLinkStyles}>
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/testimonies">Functions</Link>
+                  <Link to="/testimonies" style={NavLinkStyles}>
+                    Functions
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/testimonies">Contact Us</Link>
+                  <Link to="/testimonies" style={NavLinkStyles}>
+                    Contact Us
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/login">Login</Link>
+                  <Link to="/login" style={NavLinkStyles}>
+                    Login
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/signup"  style={SignupLinkStyles}>Signup</Link>
+                  <Link to="/signup" style={SignupLinkStyles}>
+                    Signup
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -89,16 +120,16 @@ const Nav: React.FC = () => {
         {/* Desktop Navigation */}
         <ul className="uk-navbar-nav uk-visible@m ">
           <li className="uk-margin-left">
-            <Link to="/">About</Link>
+            <Link to="/" style={NavLinkStyles}>About</Link>
           </li>
           <li className="uk-margin-left">
-            <Link to="/testimonies">Functions</Link>
+            <Link to="/testimonies" style={NavLinkStyles}>Functions</Link>
           </li>
           <li className="uk-margin-left">
-            <Link to="/testimonies">Contact Us</Link>
+            <Link to="/testimonies" style={NavLinkStyles}>ContactUs</Link>
           </li>
-          <li className="uk-margin-right" >
-            <Link to="/login">Login</Link>
+          <li className="uk-margin-right">
+            <Link to="/login" style={NavLinkStyles}>Login</Link>
           </li>
           <Link to="/signup" style={SignupLinkStyles}>
             Signup Now
