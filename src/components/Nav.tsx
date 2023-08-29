@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Nav: React.FC = () => {
   return (
     <nav
-      className="uk-navbar-container uk-navbar-transparent uk-padding uk-margin-top uk-flex uk-flex-center"
+      className="uk-navbar-container uk-navbar-transparent uk-padding  uk-flex uk-flex-center"
     >
       <div
         className="uk-navbar"

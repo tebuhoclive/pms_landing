@@ -1,9 +1,7 @@
 import React from "react";
-
-
 import VerticalLine from "./VerticalLine";
 
-const Function2: React.FC = () => {
+const Function4: React.FC = () => {
   return (
     <section
     className="uk-section uk-section-large uk-flex uk-flex-middle uk-background-cover uk-light"
@@ -44,4 +42,4 @@ const Function2: React.FC = () => {
   );
 };
 
-export default Function2;
+export default Function4;

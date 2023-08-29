@@ -1,4 +1,5 @@
 import React from "react";
+import VerticalLine from "./VerticalLine";
 
 const Hero: React.FC = () => {
   return (
@@ -12,7 +13,21 @@ const Hero: React.FC = () => {
       }}
     >
       <div className="uk-container">
-        <h2>Embrace Digital Transformation</h2>
+      <h1>
+  Embrace{" "}
+  <span style={{
+    color: "#EB1717",
+    fontFamily: "Press Start 2P",
+    fontSize: "40.67px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "150%",
+    letterSpacing: "-0.895px"
+  }}>
+    Digital Transformation
+  </span>
+</h1>
+
         <p>
           Streamline Data Extraction and Reporting. Our performance management
           systems leverage automation to eliminate reliance on environmentally
@@ -21,10 +36,16 @@ const Hero: React.FC = () => {
           employee information, enabling efficient data extraction and precise
           reporting.
         </p>
-        <a className="uk-button uk-button-primary" href="#">
-          View Products
+        <a className="uk-button uk-button-primary" style={{ backgroundColor: "white",borderRadius:"23px", border:  "4px solid #EB1717"}} href="#">
+        Download Brochure
         </a>
+        <a className="uk-button uk-button-primary" style={{ backgroundColor: "white",borderRadius:"23px", border:  "4px solid #EB1717"}} href="#">
+        Contact Us for demo
+        </a>
+        
       </div>
+
+      <VerticalLine/>
     </section>
   );
 };
